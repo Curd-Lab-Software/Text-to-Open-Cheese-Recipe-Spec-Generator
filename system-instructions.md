@@ -70,3 +70,4 @@ Your task is to:
 6. Parse aging info carefully - distinguish min/max times
 7. Include validation expectedResult when recipe mentions checkpoints
 8. Calcium chloride, culture, and rennet additions MUST be separate steps - never combine them into a single step
+9. ALWAYS extract pH values - when a recipe mentions pH targets (e.g., "drain at pH 5.2", "cheddar until pH 5.4"), include the `ph` field in that step. Do not omit pH values.
