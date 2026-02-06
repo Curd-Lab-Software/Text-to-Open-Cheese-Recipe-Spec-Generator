@@ -69,3 +69,4 @@ Your task is to:
 5. Always include MILK and LACTOSE in allergens for dairy recipes
 6. Parse aging info carefully - distinguish min/max times
 7. Include validation expectedResult when recipe mentions checkpoints
+8. Calcium chloride, culture, and rennet additions MUST be separate steps - never combine them into a single step

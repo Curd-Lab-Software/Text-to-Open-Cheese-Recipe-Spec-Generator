@@ -6,8 +6,10 @@ A structured schema for converting free-form cheese recipes into machine-readabl
 
 | File | Description |
 |------|-------------|
-| `system-instruction.md` | System prompt with parsing guidelines for the LLM |
+| `OCRS-SPEC.md` | Full OCRS specification document |
+| `system-instructions.md` | System prompt with parsing guidelines for the LLM |
 | `structured-outputs.json` | JSON Schema for structured output validation |
+| `examples/mozzarella.ocrs.yml` | Example OCRS recipe file |
 
 ## Quick Start
 
@@ -15,7 +17,7 @@ A structured schema for converting free-form cheese recipes into machine-readabl
 
 1. Go to [Google AI Studio](https://aistudio.google.com/)
 2. Create a new prompt
-3. **System Instructions**: Copy the contents of `system-instruction.md` into the system instructions field
+3. **System Instructions**: Copy the contents of `system-instructions.md` into the system instructions field
 4. **Structured Output**:
    - Click on "Output" in the right panel
    - Select "JSON" as the output format
@@ -36,7 +38,7 @@ with open("structured-outputs.json", "r") as f:
     schema = json.load(f)
 
 # Load system instructions
-with open("system-instruction.md", "r") as f:
+with open("system-instructions.md", "r") as f:
     system_instructions = f.read()
 
 client = openai.OpenAI()
@@ -68,7 +70,7 @@ import anthropic
 import json
 
 # Load system instructions
-with open("system-instruction.md", "r") as f:
+with open("system-instructions.md", "r") as f:
     system_instructions = f.read()
 
 # Load schema for reference in prompt

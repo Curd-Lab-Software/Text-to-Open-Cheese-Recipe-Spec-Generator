@@ -1,0 +1,158 @@
+---
+spec: OCRS/1.0
+recipe:
+  name: Simple Mozzarella
+  style: FRESH
+  milkType: COW
+  difficulty: BEGINNER
+  batchSize:
+    milkVolume: 3.785
+    unit: liters
+  yield:
+    amount: 450
+    unit: grams
+  totalTime: 60
+  source:
+    type: TRADITIONAL
+    reference: Classic 30-minute mozzarella technique
+
+ingredients:
+  - name: Whole Milk
+    type: PRIMARY
+    amount: 3.785
+    unit: liters
+    preparation: Fresh, not ultra-pasteurized
+
+  - name: Citric Acid
+    type: ADDITIVE
+    amount: 1.5
+    unit: tsp
+    preparation: Dissolved in 1/4 cup cool water
+
+  - name: Liquid Rennet
+    type: COAGULANT
+    amount: 0.25
+    unit: tsp
+    preparation: Diluted in 1/4 cup cool water
+
+  - name: Salt
+    type: SEASONING
+    amount: 1
+    unit: tsp
+
+steps:
+  - stepNumber: 1
+    title: Add Citric Acid
+    category: HEATING
+    instructions: >
+      Pour milk into a large pot. Add dissolved citric acid and stir well.
+      Heat slowly to 13°C (55°F).
+    temperature:
+      target: 13
+      unit: C
+
+  - stepNumber: 2
+    title: Heat and Add Rennet
+    category: COAGULATION
+    instructions: >
+      Continue heating to 32°C (90°F). Remove from heat.
+      Add diluted rennet and stir gently in an up-and-down motion for 30 seconds.
+    temperature:
+      target: 32
+      unit: C
+
+  - stepNumber: 3
+    title: Set Curd
+    category: COAGULATION
+    instructions: >
+      Cover and let sit undisturbed. The milk will begin to thicken.
+      Check for clean break after 5 minutes.
+    duration:
+      type: FIXED
+      value: 5
+      unit: minutes
+    validation:
+      expectedResult: Clean break - curd pulls away cleanly from finger
+
+  - stepNumber: 4
+    title: Cut Curds
+    category: CUTTING
+    instructions: >
+      Using a long knife, cut the curd into 1-inch cubes.
+      Make parallel cuts, then perpendicular cuts, then angled cuts.
+
+  - stepNumber: 5
+    title: Cook Curds
+    category: HEATING
+    instructions: >
+      Place pot back on heat. Slowly warm curds to 41°C (105°F) while
+      stirring gently. Curds will shrink and become firmer.
+    temperature:
+      target: 41
+      unit: C
+    duration:
+      type: FIXED
+      value: 10
+      unit: minutes
+
+  - stepNumber: 6
+    title: Drain Whey
+    category: DRAINING
+    instructions: >
+      Remove curds from whey using a slotted spoon. Transfer to a
+      microwave-safe bowl. Let drain briefly, pressing gently.
+    ph: 5.2
+    duration:
+      type: UNTIL_CONDITION
+      condition: pH reaches 5.2 or curds are firm
+
+  - stepNumber: 7
+    title: Stretch Curd
+    category: OTHER
+    instructions: >
+      Microwave curds for 1 minute. Drain excess whey. Fold and stretch
+      the curd. Repeat heating (30 seconds) and stretching until smooth
+      and elastic, like taffy. Alternatively, stretch in 77°C (170°F) water.
+    temperature:
+      target: 77
+      unit: C
+    validation:
+      expectedResult: Curd stretches smoothly without breaking
+
+  - stepNumber: 8
+    title: Salt and Form
+    category: SALTING
+    instructions: >
+      While stretching, work in the salt. Form into balls or braid.
+      Drop into ice water to set the shape.
+
+aging:
+  required: false
+
+finalProduct:
+  texture: Soft, elastic, stringy when pulled
+  flavor: Mild, milky, slightly tangy
+  moisture: HIGH
+  color: White to ivory
+
+equipment:
+  required:
+    - name: Large pot (5+ liters)
+    - name: Long knife
+    - name: Thermometer
+    - name: Slotted spoon
+    - name: Microwave-safe bowl
+  specialEquipment:
+    - name: pH meter
+      purpose: Monitoring acid development
+      alternatives: Taste test for tanginess
+
+safety:
+  allergens:
+    - MILK
+    - LACTOSE
+  shelfLife:
+    fresh: 1 week refrigerated
+  storageInstructions: >
+    Store in light brine (1 tsp salt per cup water) or wrapped in
+    plastic. Best consumed within 3-5 days for optimal texture.
